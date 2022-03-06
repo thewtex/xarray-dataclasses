@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>xarray_dataclasses.typing module &#8212; Python  documentation</title>
+    
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="xarray_dataclasses.dataset module" href="xarray_dataclasses.dataset.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="xarray_dataclasses.html">
+  Package guide
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/astropenguin/xarray-dataclasses/" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/astropengu_in/" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="xarray_dataclasses.dataarray.html">
+   xarray_dataclasses.dataarray module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xarray_dataclasses.datamodel.html">
+   xarray_dataclasses.datamodel module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xarray_dataclasses.dataoptions.html">
+   xarray_dataclasses.dataoptions module
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xarray_dataclasses.dataset.html">
+   xarray_dataclasses.dataset module
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   xarray_dataclasses.typing module
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-xarray_dataclasses.typing">
+<span id="xarray-dataclasses-typing-module"></span><h1>xarray_dataclasses.typing module<a class="headerlink" href="#module-xarray_dataclasses.typing" title="Permalink to this headline">¶</a></h1>
+<p>Submodule for type hints to define fields of dataclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following code is supposed in the examples below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
+<span class="kn">from</span> <span class="nn">xarray_dataclasses</span> <span class="kn">import</span> <span class="n">AsDataArray</span><span class="p">,</span> <span class="n">AsDataset</span>
+<span class="kn">from</span> <span class="nn">xarray_dataclasses</span> <span class="kn">import</span> <span class="n">Attr</span><span class="p">,</span> <span class="n">Coord</span><span class="p">,</span> <span class="n">Data</span><span class="p">,</span> <span class="n">Name</span>
+<span class="kn">from</span> <span class="nn">xarray_dataclasses</span> <span class="kn">import</span> <span class="n">Coordof</span><span class="p">,</span> <span class="n">Dataof</span>
+
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="xarray_dataclasses.typing.Attr">
+<span class="sig-prename descclassname"><span class="pre">xarray_dataclasses.typing.</span></span><span class="sig-name descname"><span class="pre">Attr</span></span><a class="headerlink" href="#xarray_dataclasses.typing.Attr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type hint to define attribute fields (<code class="docutils literal notranslate"><span class="pre">Attr[TAttr]</span></code>).</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">AsDataArray</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">long_name</span><span class="p">:</span> <span class="n">Attr</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;luminance&quot;</span>
+    <span class="n">units</span><span class="p">:</span> <span class="n">Attr</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cd / m^2&quot;</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The following field names are specially treated when plotting.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">long_name</span></code> or <code class="docutils literal notranslate"><span class="pre">standard_name</span></code>: Coordinate name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code>: Coordinate units.</p></li>
+</ul>
+</div>
+<dl class="simple">
+<dt>Reference:</dt><dd><p><a class="reference external" href="https://xarray.pydata.org/en/stable/user-guide/plotting.html">https://xarray.pydata.org/en/stable/user-guide/plotting.html</a></p>
+</dd>
+</dl>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TAttr</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TAttr</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="xarray_dataclasses.typing.Coord">
+<span class="sig-prename descclassname"><span class="pre">xarray_dataclasses.typing.</span></span><span class="sig-name descname"><span class="pre">Coord</span></span><a class="headerlink" href="#xarray_dataclasses.typing.Coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type hint to define coordinate fields (<code class="docutils literal notranslate"><span class="pre">Coord[TDims,</span> <span class="pre">TDtype]</span></code>).</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">AsDataArray</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">mask</span><span class="p">:</span> <span class="n">Coord</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">Coord</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">Coord</span><span class="p">[</span><span class="n">Y</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A coordinate field whose name is the same as <code class="docutils literal notranslate"><span class="pre">TDims</span></code>
+(e.g. <code class="docutils literal notranslate"><span class="pre">x:</span> <span class="pre">Coord[X,</span> <span class="pre">int]</span></code>) can define a dimension.</p>
+</div>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.Collection</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDims</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>][<code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.Collection</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDims</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="xarray_dataclasses.typing.Coordof">
+<span class="sig-prename descclassname"><span class="pre">xarray_dataclasses.typing.</span></span><span class="sig-name descname"><span class="pre">Coordof</span></span><a class="headerlink" href="#xarray_dataclasses.typing.Coordof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type hint to define coordinate fields (<code class="docutils literal notranslate"><span class="pre">Coordof[TDataClass]</span></code>).</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">Coord</span></code>, it specifies a dataclass that defines a DataArray class.
+This is useful when users want to add metadata to dimensions for plotting.</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">XAxis</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="n">long_name</span><span class="p">:</span> <span class="n">Attr</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;x axis&quot;</span>
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">YAxis</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="n">Y</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="n">long_name</span><span class="p">:</span> <span class="n">Attr</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;y axis&quot;</span>
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">AsDataArray</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">Coordof</span><span class="p">[</span><span class="n">XAxis</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">Coordof</span><span class="p">[</span><span class="n">YAxis</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A class used in <code class="docutils literal notranslate"><span class="pre">Coordof</span></code> does not need to inherit <code class="docutils literal notranslate"><span class="pre">AsDataArray</span></code>.</p>
+</div>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDataClass</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>][<code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDataClass</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="xarray_dataclasses.typing.Data">
+<span class="sig-prename descclassname"><span class="pre">xarray_dataclasses.typing.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><a class="headerlink" href="#xarray_dataclasses.typing.Data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type hint to define data fields (<code class="docutils literal notranslate"><span class="pre">Coordof[TDims,</span> <span class="pre">TDtype]</span></code>).</p>
+<p class="rubric">Example</p>
+<p>Exactly one data field is allowed in a DataArray class
+(the second and subsequent data fields are just ignored):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">AsDataArray</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Multiple data fields are allowed in a Dataset class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ColorImage</span><span class="p">(</span><span class="n">AsDataset</span><span class="p">):</span>
+    <span class="n">red</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">green</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">blue</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.Collection</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDims</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>][<code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.Collection</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDims</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDtype</span></code>]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="xarray_dataclasses.typing.Dataof">
+<span class="sig-prename descclassname"><span class="pre">xarray_dataclasses.typing.</span></span><span class="sig-name descname"><span class="pre">Dataof</span></span><a class="headerlink" href="#xarray_dataclasses.typing.Dataof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type hint to define data fields (<code class="docutils literal notranslate"><span class="pre">Coordof[TDataClass]</span></code>).</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">Data</span></code>, it specifies a dataclass that defines a DataArray class.
+This is useful when users want to reuse a dataclass in a Dataset class.</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Image</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">Coord</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">Coord</span><span class="p">[</span><span class="n">Y</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ColorImage</span><span class="p">(</span><span class="n">AsDataset</span><span class="p">):</span>
+    <span class="n">red</span><span class="p">:</span> <span class="n">Dataof</span><span class="p">[</span><span class="n">Image</span><span class="p">]</span>
+    <span class="n">green</span><span class="p">:</span> <span class="n">Dataof</span><span class="p">[</span><span class="n">Image</span><span class="p">]</span>
+    <span class="n">blue</span><span class="p">:</span> <span class="n">Dataof</span><span class="p">[</span><span class="n">Image</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A class used in <code class="docutils literal notranslate"><span class="pre">Dataof</span></code> does not need to inherit <code class="docutils literal notranslate"><span class="pre">AsDataArray</span></code>.</p>
+</div>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDataClass</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>][<code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TDataClass</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="xarray_dataclasses.typing.Name">
+<span class="sig-prename descclassname"><span class="pre">xarray_dataclasses.typing.</span></span><span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#xarray_dataclasses.typing.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type hint to define name fields (<code class="docutils literal notranslate"><span class="pre">Name[TName]</span></code>).</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">AsDataArray</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;image&quot;</span>
+</pre></div>
+</div>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TName</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray_dataclasses.typing.TName</span></code>]</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="xarray_dataclasses.dataset.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">xarray_dataclasses.dataset module</p>
+        </div>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2020-2022 Akio Taniguchi.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
